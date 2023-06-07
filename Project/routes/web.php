@@ -1,0 +1,70 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MateriController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+// Landing Page
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Login dan Register
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login_proses', [LoginController::class, 'login_proses'])->name('login-proses');
+
+
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// grup admin
+// Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
+
+
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/user', [HomeController::class, 'index'])->name('user.index');
+
+
+    // Dashboard User Admin
+
+    Route::get('/create', [HomeController::class, 'create'])->name('user.create');
+    Route::post('/store', [HomeController::class, 'store'])->name('user.store');
+
+    Route::get('/edit/{id}', [HomeController::class, 'edit'])->name('user.edit');
+    Route::post('/update/{id}', [HomeController::class, 'update'])->name('user.update');
+    Route::delete('/delete/{id}', [HomeController::class, 'delete'])->name('user.delete');
+
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+
+
+
+    // Materi
+    // Route::prefix('materi')->group(function () {
+    //     Route::get('/', [MateriController::class, 'index'])->name('materi.index');
+    //     Route::get('/create', [MateriController::class, 'create'])->name('materi.create');
+    //     Route::post('/store', [MateriController::class, 'store'])->name('materi.store');
+    //     Route::get('/edit/{id}', [MateriController::class, 'edit'])->name('materi.edit');
+    //     Route::post('/update/{id}', [MateriController::class, 'update'])->name('materi.update');
+    //     Route::delete('/delete/{id}', [MateriController::class, 'delete'])->name('materi.delete');
+    // });
+
+    Route::get('/materi', [MateriController::class, 'index'])->name('materi.index');
+    Route::match(['get', 'post'], '/materi-store', [MateriController::class, 'store'])->name('materi.store');
+});
