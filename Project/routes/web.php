@@ -67,4 +67,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/materi', [MateriController::class, 'index'])->name('materi.index');
     Route::match(['get', 'post'], '/materi-store', [MateriController::class, 'store'])->name('materi.store');
+
+
+    Route::get('/materi', [MateriController::class, 'index'])->name('materi.index');
+    Route::post('/materi', [MateriController::class, 'store'])->name('materi.store');
+    Route::delete('/materi/{id}', [MateriController::class, 'destroy'])->name('materi.destroy');
+    Route::put('/materi/{id}', [MateriController::class, 'update'])->name('materi.update');
+    Route::get('/readmore/materi/{id}', [MateriController::class, 'readmore'])->name('readmore.materi');
 });

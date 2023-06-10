@@ -34,7 +34,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form>
+                                <form action="{{ route('materi.store') }}" method="POST" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="title">Judul Materi</label>
