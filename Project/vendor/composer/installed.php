@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '7ae85cd53d1ad3eb589b624f942fbaba4f98f444',
+        'pretty_version' => 'v10.2.3',
+        'version' => '10.2.3.0',
+        'reference' => NULL,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -16,15 +16,6 @@
             'reference' => '0ad82ce168c82ba30d1c01ec86116ab52f589478',
             'type' => 'library',
             'install_path' => __DIR__ . '/../brick/math',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'ckeditor/ckeditor' => array(
-            'pretty_version' => '4.21.0',
-            'version' => '4.21.0.0',
-            'reference' => 'af71d07caa2172c53e0e426250e3b0189137915b',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../ckeditor/ckeditor',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -380,9 +371,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '7ae85cd53d1ad3eb589b624f942fbaba4f98f444',
+            'pretty_version' => 'v10.2.3',
+            'version' => '10.2.3.0',
+            'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -733,8 +724,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

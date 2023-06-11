@@ -94,8 +94,7 @@
                 <form action="{{ route('register-proses') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap"
-                            value=" {{ old('nama') }}">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama" value=" {{ old('nama') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>

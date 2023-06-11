@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materi extends Model
 {
+    
     use HasFactory;
     protected $fillable = [
 

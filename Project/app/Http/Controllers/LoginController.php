@@ -31,12 +31,11 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($data)) {
-            return redirect()->route('dashboard');
+            return redirect()->route('home.index');
         } else {
             return redirect()->route('login')->with('failed', 'Email atau Password Salah');
         }
     }
-
     // logout
     public function logout()
     {
@@ -70,7 +69,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($login)) {
-            return redirect()->route('dashboard');
+            return redirect()->route('home.index');
         } else {
             return redirect()->route('login')->with('failed', 'Email atau Password Salah');
         }
