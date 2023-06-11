@@ -73,6 +73,8 @@
 
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/summernote/summernote-bs4.min.css') }}">
+    <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+
 
 </head>
 
@@ -285,7 +287,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('kuis.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Kuis
@@ -322,7 +324,7 @@
 
     <!-- jQuery -->
     <script src="{{ asset('AdminLTE/plugins/jquery/jquery.min.js') }}"></script>
-
+    <script src="{{ asset('path/to/ckeditor/ckeditor.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('AdminLTE/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 

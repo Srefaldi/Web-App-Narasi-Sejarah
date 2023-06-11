@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KuisController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MateriController;
-
+use App\Models\quiz;
 
 // Landing Page
 Route::get('/', function () {
@@ -64,4 +65,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/materi/{id}', [MateriController::class, 'destroy'])->name('materi.destroy');
     Route::put('/materi/{id}', [MateriController::class, 'update'])->name('materi.update');
     Route::get('/readmore/materi/{id}', [MateriController::class, 'readmore'])->name('readmore.materi');
+
+
+
+    // Kuis
+    Route::get('/kuis/quiz', [KuisController::class, 'index'])->name('kuis.index');
+    Route::post('/kuis/quiz', [KuisController::class, 'store'])->name('mulaikuis.store');
+    Route::delete('/quiz/delete/{id}', [KuisController::class, 'destroy'])->name('mulaikuis.destroy');
+    Route::get('layout/quiz', [KuisController::class, 'index'])->name('menu.quis');
+    Route::put('/mulaikuis/{id}', [KuisController::class, 'update'])->name('mulaikuis.update');
 });
