@@ -13,7 +13,7 @@
     </div> --}}
 
 
-@section('conten')
+@section('content')
     <div class="container py-5">
         <div class="card shadow">
             <img src="{{ url('storage/' . $item->image) }}" alt="{{ $item->title }}" class="card-img-top">
