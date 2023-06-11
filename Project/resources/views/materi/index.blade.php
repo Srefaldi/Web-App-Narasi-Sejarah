@@ -41,10 +41,11 @@
                     @foreach ($items as $item)
                         <div class="col-md-4">
                             <div class="card border-0 mb-3 shadow">
-                                <img src="{{ url('storage/' . $item->image) }}" alt="" class="card-img-top"
-                                    height="200px" width="100px">
+                                <img src="{!! asset('storage/' .$item->image) !!}" height="200px" width="100px">
+
+
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->title }}</h5>
+                                    <h5 class="card-title">{{ $item->title }}</h5><br>
                                     <p class="mb-0 text-secondary">{!! htmlspecialchars_decode(substr($item->description, 0, 10)) !!}.....</p>
                                     <a href="{{ route('readmore.materi', ['id' => $item->id]) }}"
                                         class="btn btn-success">Read
@@ -136,12 +137,12 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="title">Judul Artikel</label>
-                                        <input type="text" class="form-control" name="title" id="title">
+                                        <input type="text" class="form-control" name="title" id="title"><br>
                                     </div>
                                     <div class="mb-3">
                                         <label for="image">Image</label>
                                         <input type="file" accept="image/*" class="form-control" name="image"
-                                            id="image">
+                                            id="image"><br>
                                     </div>
                                     <div class="mb-3">
                                         <label for="description">Deskripsi</label>

@@ -60,7 +60,7 @@ class MateriController extends Controller
     }
     public function readmore($id)
     {
-        $item = Materi::find($id); // Retrieve the item based on the given ID
+        $item = Materi::find($id); 
 
         return view('materi.readmore', compact('item'));
     }
