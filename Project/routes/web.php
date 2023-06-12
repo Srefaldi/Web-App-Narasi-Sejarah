@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KuisController;
 use App\Http\Controllers\MateriController;
 
 
@@ -46,4 +47,17 @@ Route::get('/materi', [MateriController::class, 'index'])->name('materi.index');
 Route::post('/materi', [MateriController::class, 'store'])->name('materi.store');
 Route::delete('/materi/{id}', [MateriController::class, 'destroy'])->name('materi.destroy');
 Route::put('/materi/{id}', [MateriController::class, 'update'])->name('materi.update');
-Route::get('/readmore/materi/{id}', [MateriController::class, 'readmore'])->name('readmore.materi'); 
+Route::get('/readmore/materi/{id}', [MateriController::class, 'readmore'])->name('readmore.materi');
+
+
+// Kuis
+Route::get('/kuis/mulaikuis', [KuisController::class, 'index'])->name('kuis.index');
+Route::post('/kuis/mulaikuis', [KuisController::class, 'store'])->name('mulaikuis.store');
+Route::delete('/mulaikuis/delete/{id}', [KuisController::class, 'destroy'])->name('mulaikuis.destroy');
+Route::get('layout/quis', [KuisController::class, 'index'])->name('menu.quis');
+Route::put('/mulaikuis/{id}', [KuisController::class, 'update'])->name('mulaikuis.update');
+
+Route::get('/kuis/startkuis', [KuisController::class, 'startkuis'])->name('startkuis');
+Route::post('/kuis/leaderboardinsert', [KuisController::class, 'store_leaderboard'])->name('store.leaderboard');
+
+Route::get('/kuis/leaderboard', [KuisController::class, 'viewleaderboard'])->name('leaderboard');
