@@ -66,7 +66,7 @@
         <div class="text-center">
             <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
             <br>
-            <h3>NANDA ANJING IBLIS</h3>
+            <h3>KUIS NANDE NANDE</h3>
         </div>
 
         <div class="text-right">
@@ -77,13 +77,6 @@
             @endif
         </div>
 
-        {{-- <div class="text-center">
-            <form action="{{ route('startkuis') }}" method="get" style="display: inline">
-                <button class="btn btn-primary" data-bs-toggle="modal">
-                    Mulai Kuis
-                </button>
-            </form>
-        </div> --}}
 
         <div class="container-sm mt-5 text-left" style="width: 50%">
             @if (session()->has('success'))
@@ -125,6 +118,10 @@
                         </label>
                     </div>
 
+
+
+                    {{-- ADMIN --}}
+                    
                     <div class="mt-3">
                         @if (auth()->user()->level == 'admin')
                             <form action="{{ route('mulaikuis.destroy', $item->id) }}" method="POST"
@@ -142,14 +139,12 @@
 
                 </div>
 
-
-
                 <!-- Modal Edit -->
                 <div class="modal" id="editItem{{ $item->id }}" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit Fauna</h5>
+                                <h5 class="modal-title">Edit Soal</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>

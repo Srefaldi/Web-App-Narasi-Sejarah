@@ -13,17 +13,7 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
-.navbar {
-  background-color: transparent; /* Menghapus warna latar belakang */
-}
 
-.navbar ul li a {
-  color: #000000; /* Mengubah warna teks menjadi hitam */
-}
-
-.navbar ul li a:hover {
-  color: #ff0000; /* Mengubah warna teks saat dihover menjadi merah */
-}
 
 a {
   color: #47b2e4;

@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KuisController;
 use App\Http\Controllers\MateriController;
-
+use App\Http\Controllers\StartController;
 
 
 /*
@@ -35,7 +35,7 @@ Route::post('/login_proses', [LoginController::class, 'login_proses'])->name('lo
 
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
-Route::get('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
+Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -50,14 +50,18 @@ Route::put('/materi/{id}', [MateriController::class, 'update'])->name('materi.up
 Route::get('/readmore/materi/{id}', [MateriController::class, 'readmore'])->name('readmore.materi');
 
 
-// Kuis
+// Kuis CRUD
 Route::get('/kuis/mulaikuis', [KuisController::class, 'index'])->name('kuis.index');
 Route::post('/kuis/mulaikuis', [KuisController::class, 'store'])->name('mulaikuis.store');
 Route::delete('/mulaikuis/delete/{id}', [KuisController::class, 'destroy'])->name('mulaikuis.destroy');
 Route::get('layout/quis', [KuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [KuisController::class, 'update'])->name('mulaikuis.update');
 
-Route::get('/kuis/startkuis', [KuisController::class, 'startkuis'])->name('startkuis');
-Route::post('/kuis/leaderboardinsert', [KuisController::class, 'store_leaderboard'])->name('store.leaderboard');
+// Kuis Mulai
+Route::get('/kuis', [StartController::class, 'index'])->name('mulai.rules');
+Route::get('/kuis', [StartController::class, 'startkuis'])->name('mulai.kuis');
 
-Route::get('/kuis/leaderboard', [KuisController::class, 'viewleaderboard'])->name('leaderboard');
+// leaderboard
+// Route::get('/kuis/startkuis', [KuisController::class, 'startkuis'])->name('startkuis');
+// Route::post('/kuis/leaderboardinsert', [KuisController::class, 'store_leaderboard'])->name('store.leaderboard');
+// Route::get('/kuis/leaderboard', [KuisController::class, 'viewleaderboard'])->name('leaderboard');
